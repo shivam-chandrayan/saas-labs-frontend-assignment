@@ -77,30 +77,47 @@ const App: React.FC = () => {
               {displayedProjects.map((project, index) => (
                 <tr key={project["s.no"]}>
                   <td>{(currentPage - 1) * recordsPerPage + index + 1}</td>
-                  <td>{project["percentage.funded"]}%</td>
-                  <td>{project["amt.pledged"]}</td>
+                  <td className="percent">{project["percentage.funded"]}%</td>
+                  <td>
+                    {`₹${new Intl.NumberFormat("en-IN").format(
+                      project["amt.pledged"]
+                    )}`}
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
           <div className="pagination">
-            <button
-              onClick={handlePrevPage}
-              disabled={currentPage === 1}
-              className="pagination-button"
-            >
-              Previous
-            </button>
-            <p>
-              Page {currentPage} of {totalPages}
-            </p>
-            <button
-              onClick={handleNextPage}
-              disabled={currentPage === totalPages}
-              className="pagination-button"
-            >
-              Next
-            </button>
+            <div className="page-marker">
+              <p>
+                {`Showing ${
+                  (currentPage - 1) * recordsPerPage + 1
+                } - ${Math.min(
+                  currentPage * recordsPerPage,
+                  projects.length
+                )} of ${projects.length}`}
+              </p>
+            </div>
+
+            <div className="pagination-btns">
+              <button
+                onClick={handlePrevPage}
+                disabled={currentPage === 1}
+                className="pagination-button"
+              >
+                <img src="./chevron-left-solid.svg" alt="" />
+              </button>
+              <p className="page-number">
+                {currentPage} / {totalPages}
+              </p>
+              <button
+                onClick={handleNextPage}
+                disabled={currentPage === totalPages}
+                className="pagination-button"
+              >
+                <img src="chevron-right-solid.svg" alt="" />
+              </button>
+            </div>
           </div>
         </div>
       ) : (
