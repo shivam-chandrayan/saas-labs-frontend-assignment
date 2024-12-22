@@ -113,7 +113,7 @@ const App: React.FC = () => {
                 <img src="./chevron-left-solid.svg" alt="" />
               </button>
               <p className="page-number" tabIndex={0} aria-live="polite">
-                {currentPage} / {totalPages}
+                Page {currentPage} of {totalPages}
               </p>
               <button
                 onClick={handleNextPage}
