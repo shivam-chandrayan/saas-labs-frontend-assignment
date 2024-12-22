@@ -1,0 +1,76 @@
+.app-container {
+  /* max-width: 800px; */
+  min-height: 100vh;
+  /* margin: 50px auto; */
+  background: #f4f4f4;
+  /* padding: 20px; */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(240,6.7%,17.6%,1)'/><path d='M 10,-2.55e-7 V 20 Z M -1.1677362e-8,10 H 20 Z'  stroke-width='1' stroke='hsla(47,80.9%,61%,1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+}
+
+.heading {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.loading,
+.no-data {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+}
+
+.table-container {
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.table-heading {
+  background-color: #a3b0c7;
+  color: #fff;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: left;
+}
+
+/* .table th {
+  background-color: #a3afc9;
+  color: #555;
+} */
+
+.table tr:nth-child(even) {
+  background-color: #f4f6f8;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pagination-button:disabled {
+  background-color: #d6d6d6;
+  cursor: not-allowed;
+}
