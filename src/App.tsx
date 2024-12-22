@@ -123,6 +123,24 @@ const App: React.FC = () => {
       ) : (
         <div className="no-data">No projects available</div>
       )}
+
+      <div className="bio">
+        <p>Created by - Shivam Kumar</p>
+        <p>|</p>
+        <a
+          href="https://drive.google.com/file/d/1NMUxgJbZ-ZJAlQ0agv0cA-VgOHAnrpaP/view?usp=sharing"
+          target="_blank"
+        >
+          Resume
+        </a>
+        <p>|</p>
+        <a
+          href="https://www.linkedin.com/in/shivam-chandrayan/"
+          target="_blank"
+        >
+          LinkedIn
+        </a>
+      </div>
     </div>
   );
 };

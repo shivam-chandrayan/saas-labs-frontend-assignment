@@ -123,3 +123,13 @@
   background-color: #d6d6d6;
   cursor: not-allowed;
 }
+
+.bio {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+.bio > * {
+  margin-left: 10px;
+}
