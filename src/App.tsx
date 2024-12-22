@@ -59,18 +59,22 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="app-container">
-      <h1 className="heading">Kickstarter Projects</h1>
+    <div className="app-container" role="main">
+      <h1 className="heading" tabIndex={0}>
+        Kickstarter Projects
+      </h1>
       {loading ? (
-        <div className="loading">Loading...</div>
+        <div className="loading" role="status">
+          Loading...
+        </div>
       ) : projects.length > 0 ? (
         <div className="table-container">
-          <table className="table">
+          <table className="table" aria-label="Kickstarter Projects Table">
             <thead className="table-heading">
               <tr>
-                <th>S.NO.</th>
-                <th>PERCENTAGE FUNDED</th>
-                <th>AMOUNT PLEDGED</th>
+                <th scope="col">S.No.</th>
+                <th scope="col">Percentage Funded</th>
+                <th scope="col">Amount Pledged</th>
               </tr>
             </thead>
             <tbody>
@@ -87,7 +91,7 @@ const App: React.FC = () => {
               ))}
             </tbody>
           </table>
-          <div className="pagination">
+          <div className="pagination" aria-label="Pagination Navigation">
             <div className="page-marker">
               <p>
                 {`Showing ${
@@ -104,16 +108,18 @@ const App: React.FC = () => {
                 onClick={handlePrevPage}
                 disabled={currentPage === 1}
                 className="pagination-button"
+                aria-label="Previous Page"
               >
                 <img src="./chevron-left-solid.svg" alt="" />
               </button>
-              <p className="page-number">
+              <p className="page-number" tabIndex={0} aria-live="polite">
                 {currentPage} / {totalPages}
               </p>
               <button
                 onClick={handleNextPage}
                 disabled={currentPage === totalPages}
                 className="pagination-button"
+                aria-label="Next Page"
               >
                 <img src="chevron-right-solid.svg" alt="" />
               </button>
@@ -121,7 +127,9 @@ const App: React.FC = () => {
           </div>
         </div>
       ) : (
-        <div className="no-data">No projects available</div>
+        <div className="no-data" role="alert">
+          No projects available
+        </div>
       )}
 
       <div className="bio">

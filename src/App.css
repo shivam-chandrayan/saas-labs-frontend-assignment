@@ -82,8 +82,9 @@
 }
 
 .page-marker {
-  color: #d6d6d6;
+  color: #8f8f8f;
 }
+
 .pagination-btns {
   display: flex;
   justify-content: center;
@@ -130,6 +131,7 @@
   left: 0;
   display: flex;
 }
+
 .bio > * {
   margin-left: 10px;
 }
